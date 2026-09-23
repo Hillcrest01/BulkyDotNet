@@ -1,0 +1,52 @@
+﻿@model Users
+
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Create an Account</h2>
+        </div>
+    </div>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <form method="post">
+        <div class="border p-3 mt-4">
+            <div class="mb-3 row">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3 row">
+                <label asp-for="Email" ></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+             <div class="mb-3 row">
+                <label asp-for="Username" ></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+             <div class="mb-3 row">
+                <label asp-for="Phone" ></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+             <div class="mb-3 row">
+                <label asp-for="Password" ></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-primary form-control" style="width:150px">Create</button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a class="btn btn-secondary" asp-controller="Users" asp-action="Index">Back to Users</a>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+</div>

@@ -1,0 +1,56 @@
+﻿@model List<Users>
+
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Category List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Users" asp-action="Register" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Create Account</a>
+        </div>
+    </div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Email Address
+        </th>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Phone Number
+                </th>
+                <th>
+                    Actions
+                </th>
+               
+    </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var obj in Model){
+    <tr>
+            <td>@obj.Name</td>
+            <td>@obj.Email </td>
+            <td>@obj.Username</td>
+            <td>@obj.Phone</td>
+                    <td>
+                        <div class="w-95 btn-group" role="group">
+                            <a asp-controller="Users" asp-action="Edit" asp-route-email="@obj.Email" class="btn btn-primary mx-3">
+                                <i class="bi bi-pencil-square"></i>Edit
+                            </a>
+                            <a asp-controller="Users" asp-action="Delete" asp-route-email="@obj.Email" class="btn btn-danger mx-3">
+                                <i class="bi bi-trash-fill"></i>Delete
+                            </a>
+                        </div>
+                    </td>
+    </tr>
+        }
+    </tbody>
+</table>
+</div>
